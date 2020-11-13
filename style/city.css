@@ -4,6 +4,10 @@ a{
 
 	}
 
+    .clr{
+        clear: both;
+    }
+
 .box-1 a{
 	color: yellow;
 	
@@ -21,9 +25,11 @@ a{
 body{ 
 	
 	margin:0;
-	
+	background-color: #CF5353;
 	
 }
+
+
 
 
 .box-1{
@@ -45,7 +51,7 @@ body{
 }
 
 .box-2{
-	background-color: #3C88FA;
+	background-color: #008FFF;
 	color : white;
 	height:50px;
     position: relative;
@@ -69,9 +75,16 @@ body{
     bottom: -28px;
 }
 
+.box-2 h3{
+    
+    position: absolute;
+    left: 400px;
+    bottom: -10px;
+}
+
 
 .box-3{
-	background-color: white;
+	background-color: #F7F7F7;
 	height:30px;
     position: relative;
     padding-top: 5px ;
@@ -94,7 +107,7 @@ body{
 	background-image: url('../images/city7.jpg');
 	height:1000px;
     position: relative;
-    padding-top: 5px ;
+    
     color:blue;
     background-size: 1350px 1000px;
     background-repeat: no-repeat;
@@ -173,9 +186,10 @@ body{
 }
 
 .button{
-    background-color: #086BCF;
+    background-color: #34A072;
     color: white;
     border: 1px white solid;
+    border-radius: 5px;
 
 }
 .button:hover{
@@ -183,5 +197,264 @@ body{
     cursor: pointer;
 }
 
+.button2{
+    background-color: #086BCF;
+    color: white;
+    border: 1px white solid;
+
+}
+.button2:hover{
+    background-color: #FFFFFF33;
+    cursor: pointer;
+}
+
+
+.box-7{
+    background-image: url('../images/nyc11.jpg');
+    height:1000px;
+    position: relative;
+    
+    color:blue;
+    background-size: 1350px 1000px;
+    background-repeat: no-repeat;
+    
+   
+}
+
+.box-7 .box-8{
+    position: relative;
+    width:800px;
+    height: 400px;
+    margin: auto;
+    top: 200px;
+    background: #1E88CAE6;
+    left : 30px;
+    color:black;
+    border-radius: 15px;
+}
+
+#addPost{
+    left : 280px;
+    top: 20px;
+    position: relative;
+}
+#firstName h1{
+    font-size: 13px;
+    color:white;
+
+}
+
+#lastName h1{
+    font-size: 13px;
+    color: white;
+
+}
+
+.box-8 h1{
+    color :white;
+    font-family: Andale Mono, monospace;
+    font-size: 30px;
+    left: 30px;
+    top: 10px;
+    position: relative;
+}
+
+.box-8 h2{
+    color :white;
+    font-family: Andale Mono, monospace;
+    font-size: 15px;
+    left: 160px;
+    top: 10px;
+    position: relative;
+}
+
+#output{
+    color:white;
+    position: relative;
+    left: 320px;
+    top: 10px;
+}
+
+#noName{
+ 
+   
+    height:5px;
+}
+
+#noName h1{
+    color:red;
+    font-size: 15px;
+    position: relative;
+    left: 290px;
+    top:20px;
+    
+    
+}
+
+#getText{
+    color:white;
+    background-color: #5DC767;
+}
+
+
+.divide{
+    margin-top: 20px;
+    color:white;
+    position: relative;
+    left: 300px;
+    font-family: Andale Mono;
+}
+
+
+
+#block1{
+    float:left;
+    width:20%;
+    margin-top:35px;
+    margin-right:12px;
+    margin-left:100px;
+    box-sizing :border-box;
+    color : #00599A;
+    height:200px;
+    position: relative;
+    background-image: url('../images/health.png');
+    background-size: cover;
+}
+
+
+
+.block2{
+    float:left;
+    width:20%;
+    box-sizing :border-box;
+    margin-top:35px;
+    margin-right:7px;
+   
+    color : white;
+    height:200px;
+    position: relative;
+    background-image: url('../images/tech.jpeg');
+    background-size: cover;
+   
+   
+}
+
+
+
+
+.block3{
+    float:left;
+    width:20%;
+    box-sizing :border-box;
+    margin-top:35px;
+    margin-right:7px;
+   
+    color : black;
+    height:200px;
+    position: relative;
+    background-image: url('../images/social.jpg');
+    background-size: cover;
+   
+   
+}
+
+.block3 h1{
+    left: 30px;
+    position: relative;
+    top:70px;
+}
+
+
+.block4{
+    float:left;
+    width:20%;
+    box-sizing :border-box;
+    margin-top:35px;
+    margin-right:7px;
+    
+    color : #255257;
+    height:200px;
+    position: relative;
+    background-image: url('../images/eng.jpg');
+    background-size: cover;
+   
+}
+
+.block5{
+    float:left;
+    width:20%;
+    margin-top:35px;
+    margin-right:12px;
+    margin-left:100px;
+    box-sizing :border-box;
+   
+    color : white;
+    height:200px;
+    position: relative;
+    background-image: url('../images/public.jpg');
+    background-size: cover;
+}
+
+.block6{
+    float:left;
+    width:20%;
+    box-sizing :border-box;
+    margin-top:35px;
+    margin-right:7px;
+    
+    color : white;
+    height:200px;
+    position: relative;
+    background-image: url('../images/legal.jpg');
+    background-size: cover;
+   
+   
+}
+
+
+
+
+.block7{
+    float:left;
+    width:20%;
+    box-sizing :border-box;
+    margin-top:35px;
+    margin-right:7px;
+    
+    color : #307ED6;
+    height:200px;
+    position: relative;
+    background-image: url('../images/finance.jpg');
+    background-size: cover;
+   
+   
+}
+
+
+.block8{
+    float:left;
+    width:20%;
+    box-sizing :border-box;
+    margin-top:35px;
+    margin-right:7px;
+    
+    color : white;
+    height:200px;
+    position: relative;
+    background-image: url('../images/policy.jpg');
+    background-size: cover;
+    margin-bottom: 30px;
+   
+   
+}
+
+
+
+#output2{
+    position: relative;
+    left:180px;
+    height: 300px;
+
+}
 
 
