@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="style/city.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style/city.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
 table, th, td {
@@ -30,9 +30,9 @@ table td{
 
 </head>
 <body>
-	<div class= "container">
-		
-	 	<div class= "box-1">
+  <div class= "container">
+    
+    <div class= "box-1">
         
         <h1> <i class="fa fa-exclamation-triangle"></i><a href= "" target = "_blank"> COVID-19 info</a> </h1>
         
@@ -43,8 +43,8 @@ table td{
      
 
      <div class= "box-2">
-		
-		<h1 style="color:#40E365;"> NYC</h1> <h2>JOBZONE  </h2>
+    
+    <h1 style="color:#40E365;"> NYC</h1> <h2>JOBZONE  </h2>
     <h3><input class = "button" type ="submit" value= "Civil Service Exams" name="" style="font-size : 20px; width: 200px; height: 30px;" > <input class = "button" type ="submit" value= "Internships" name="" style="font-size : 20px; width: 200px; height: 30px;" > <input class = "button" type ="submit" value= "Career Events" name="" style="font-size : 20px; width: 200px; height: 30px;" ></h3> 
      </div>
 
@@ -54,27 +54,27 @@ table td{
      <h1 > <a href= "" target = "_blank">Home</a> | <a href= "" target = "_blank">Contact Us </a> | <a href= "" target = "_blank">About NYC </a> | <a href= "" target = "_blank">News </a></h1>
      </div>
 
-	
-	<div class= "box-4">
+  
+  <div class= "box-4">
       <div class= "box-5">
-     		<h1> 
-     			Why Should You Work For The City? 
+        <h1> 
+          Why Should You Work For The City? 
 
-     		</h1>
-     		<h2>
-				Career opportunity. Job security. Great benefits. 
-				
+        </h1>
+        <h2>
+        Career opportunity. Job security. Great benefits. 
+        
 
                    
-     		</h2>
+        </h2>
 
-     		<h3> +300,000 Employees</h3>
-     		<h4> 80 Agencies </h4>
+        <h3> +300,000 Employees</h3>
+        <h4> 80 Agencies </h4>
 
-     		<h5><input class = "button2" type ="submit" value= "LEARN MORE" name="" style="font-size : 10px; width: 100px; height: 50px;" > </h5> 
+        <h5><input class = "button2" type ="submit" value= "LEARN MORE" name="" style="font-size : 10px; width: 100px; height: 50px;" > </h5> 
 
-     		
-     		</div>
+        
+        </div>
       
       </div>
 
@@ -117,17 +117,7 @@ table td{
 
 
 
-
-
-
-
-
-
-
-
-
-
-            </h3>
+</h3>
             </div>
       
       </div>
@@ -200,7 +190,6 @@ table td{
             
                 if(firstInput.value.toUpperCase() === post.first_name && lastInput.value.toUpperCase() === post.last_name ){
             output+=`
-
                <div> 
                <h3> ${post.adj_fa} </h3>
                
@@ -224,21 +213,6 @@ table td{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
 
        document.getElementById('block1').addEventListener('click', getPosts);
@@ -254,7 +228,6 @@ table td{
             
                 if('Health' === post.job_category){
             output2+=`
-
                <div> 
                <h4>
                <table>
@@ -266,7 +239,6 @@ table td{
                <th> Location </th>
                </tr>
                </thead>
-
                <tbody>
                <tr>
                <td > ${post.job_id} </td>
@@ -275,16 +247,12 @@ table td{
                <td> ${post.work_location} </td>
                
                </tr>
-
                
                <tr>
                <td colspan= "4"; >${post.job_description}</td>
                </tr>
-
-
                </tbody>
                </table>
-
                </h4>
                </div>
                `;}
