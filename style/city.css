@@ -1,3 +1,4 @@
+PROJECT CSS
 a{ 
     text-decoration: none;
     color: white;
@@ -239,17 +240,13 @@ body{
     position: relative;
 }
 #firstName h1{
-    /* chnaging the font size  */
-    /* font-size: 13px; */
-    font-size: 18px;
+    font-size: 13px;
     color:white;
 
 }
 
 #lastName h1{
-    /* chnaging the font size  */
-    /* font-size: 13px; */
-    font-size: 18px;
+    font-size: 13px;
     color: white;
 
 }
@@ -266,13 +263,9 @@ body{
 .box-8 h2{
     color :white;
     font-family: Andale Mono, monospace;
-    /* changing the font size */
-    /* font-size: 15px; */
-    font-size: 20px;
-    /* left: 160px;
-    top: 10px; */
-    /* Centering the heading instead of using left and top */
-    text-align: center;
+    font-size: 15px;
+    left: 160px;
+    top: 10px;
     position: relative;
 }
 
@@ -302,8 +295,6 @@ body{
 #getText{
     color:white;
     background-color: #5DC767;
-    /* adding a top margin */
-    margin-top: 20px;
 }
 
 
