@@ -4,11 +4,35 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="style/city.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 70%;
+  padding:0px;
+  table-layout: fixed;
+
+}
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+table th{
+  background-color: #386D89;
+  color:white;
+}
+table td{
+  background-color: #B8FFCFE6;
+}
+</style>
+
+
 </head>
 <body>
 	<div class= "container">
 		
-		<div class= "box-1">
+	 	<div class= "box-1">
         
         <h1> <i class="fa fa-exclamation-triangle"></i><a href= "" target = "_blank"> COVID-19 info</a> </h1>
         
@@ -20,13 +44,14 @@
 
      <div class= "box-2">
 		
-		<h1 style="color:#40E365;"> NYC</h1> <h2>JOBZONE </h2>
+		<h1 style="color:#40E365;"> NYC</h1> <h2>JOBZONE  </h2>
+    <h3><input class = "button" type ="submit" value= "Civil Service Exams" name="" style="font-size : 20px; width: 200px; height: 30px;" > <input class = "button" type ="submit" value= "Internships" name="" style="font-size : 20px; width: 200px; height: 30px;" > <input class = "button" type ="submit" value= "Career Events" name="" style="font-size : 20px; width: 200px; height: 30px;" ></h3> 
      </div>
 
 
 
      <div class= "box-3">
-     <h1> <a href= "" target = "_blank">Home</a> | <a href= "" target = "_blank">Contact Us </a> | <a href= "" target = "_blank">About NYC </a> | <a href= "" target = "_blank">News </a></h1>
+     <h1 > <a href= "" target = "_blank">Home</a> | <a href= "" target = "_blank">Contact Us </a> | <a href= "" target = "_blank">About NYC </a> | <a href= "" target = "_blank">News </a></h1>
      </div>
 
 	
@@ -46,12 +71,239 @@
      		<h3> +300,000 Employees</h3>
      		<h4> 80 Agencies </h4>
 
-     		<h5><input class = "button" type ="submit" value= "LEARN MORE" name="" style="font-size : 10px; width: 100px; height: 50px;" > </h5>
+     		<h5><input class = "button2" type ="submit" value= "LEARN MORE" name="" style="font-size : 10px; width: 100px; height: 50px;" > </h5> 
 
      		
      		</div>
       
       </div>
+
+
+
+
+<div class= "box-7">
+      <div class= "box-8">
+            <h1> 
+                Have you recently taken a Civil Service Exam? 
+
+            </h1>
+
+    <h2>
+
+      Enter your first and last name to view your score
+
+    </h2>
+    <h3>
+               <div id= "noName">
+               <h1> </h1>
+               </div>
+   <form id= "addPost">
+      <div id= "firstName">
+       <h1>First Name: </h1>  <input type= "text" id ="firstname" placeholder ="Enter First Name">
+
+      </div>
+      <div id = "lastName">
+        <h1> Last Name: </h1> <input type= "text" id ="lastname" placeholder ="Enter Last Name">
+         
+      </div>
+      <button id= "getText"> Search</button>
+   </form>
+
+   <div id= "output"></div>
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </h3>
+            </div>
+      
+      </div>
+
+      <div class= "divide"> <h1> Searching for a job? </h1>
+        <h2> Click a category to view the available job listings.</div>
+
+  <a href=""> <div id= "block1">
+        <h1> Health</h1> 
+       </div> </a>
+
+
+
+       <div class= "block2">
+       <h1> Technology, Data & Innovation </h1>
+      </div>
+      <div class= "block3">
+      <h1> Social Services </h1>
+      </div>
+       <div class= "block4">
+      <h1> Engineering, Architecture & Planning </h1>
+      </div>
+
+
+
+      <div class= "block5">
+        <h1> Public Safety, Inspections & Enforcement</h1>
+       </div>
+       <div class= "block6">
+       <h1> Legal</h1>
+      </div>
+      <div class= "block7">
+      <h1> Finance, Accounting & Procurement </h1>
+      </div>
+       <div class= "block8">
+      <h1> Policy, Research & Analysis </h1>
+      </div>
+
+     <div class= "clr"></div>
+
+
+  
+      
+     
+      <div id= "output2">
+      
+   </div>
+ 
+ 
+
+      
+
+
+<script>
+
+      const firstInput = document.querySelector('#firstname')
+      const lastInput = document.querySelector('#lastname')
+      const msg = document.querySelector('#noName')
+
+      document.getElementById('getText').addEventListener('click', getPosts);
+
+
+      function getPosts(e){
+         e.preventDefault();
+         fetch('https://data.cityofnewyork.us/resource/vx8i-nprf.json')
+         .then((res) => res.json())
+         .then((data) => {
+            let output = "";
+            data.forEach(function(post){
+            
+                if(firstInput.value.toUpperCase() === post.first_name && lastInput.value.toUpperCase() === post.last_name ){
+            output+=`
+
+               <div> 
+               <h3> ${post.adj_fa} </h3>
+               
+               </div>
+               `;}
+               
+             });
+            if (output != "")
+            document.getElementById('output').innerHTML = output;
+            else{
+             
+              msg.innerHTML = '<h1>NAME NOT FOUND</h1>';
+               setTimeout(() => msg.innerHTML= "", 4000);
+
+               }
+            
+         })
+      }
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+       document.getElementById('block1').addEventListener('click', getPosts);
+
+
+      function getPosts(e){
+         e.preventDefault();
+         fetch('https://data.cityofnewyork.us/resource/kpav-sd4t.json')
+         .then((res) => res.json())
+         .then((data) => {
+            let output2 = "";
+            data.forEach(function(post){
+            
+                if('Health' === post.job_category){
+            output2+=`
+
+               <div> 
+               <h4>
+               <table>
+               <thead>
+               <tr>
+               <th> Job ID </th>
+               <th> Job Title </th>
+               <th> Employer </th>
+               <th> Location </th>
+               </tr>
+               </thead>
+
+               <tbody>
+               <tr>
+               <td > ${post.job_id} </td>
+               <td> ${post.business_title} </td>
+               <td> ${post.agency} </td>
+               <td> ${post.work_location} </td>
+               
+               </tr>
+
+               
+               <tr>
+               <td colspan= "4"; >${post.job_description}</td>
+               </tr>
+
+
+               </tbody>
+               </table>
+
+               </h4>
+               </div>
+               `;}
+               
+               
+
+            });
+            if (output2 != "")
+            document.getElementById('output2').innerHTML = output2;
+            else{msg.innerHTML = 'NAME NOT FOUND';
+               setTimeout(() => msg.innerHTML= "", 4000);
+
+               }
+            
+         })
+      }
+
+
+      </script>
 
 
 
