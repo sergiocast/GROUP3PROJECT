@@ -2,10 +2,15 @@
 <html>
 <head>
   <title></title>
+
+  <!--link to our css-->
   <link rel="stylesheet" type="text/css" href="style/city.css">
+
+  <!--stylesheet to get the exclamation character next to covid-19 info-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
+<!--css to style the table of the data from the job listings API--> 
   <style>
 table, th, td {
   border: 1px solid black;
@@ -29,9 +34,15 @@ table td{
 </style>
 
 
+
+
 </head>
 <body>
+
+  <!--a div container to position our content on the page-->
   <div class= "container">
+
+  <!--block containing a link for covid-19 info-->
     
     <div class= "box-1">
         
@@ -40,7 +51,7 @@ table td{
      </div>
 
      
-
+  <!--block containing the name of the company and links to civil service exams, internships, career events-->
      
 
      <div class= "box-2">
@@ -50,11 +61,13 @@ table td{
      </div>
 
 
+   <!--block containing the nav bar--> 
 
      <div class= "box-3">
      <h1 > <a href= "" target = "_blank">Home</a> | <a href= "" target = "_blank">Contact Us </a> | <a href= "" target = "_blank">About NYC </a> | <a href= "" target = "_blank">News </a></h1>
      </div>
 
+<!--block containing another block with a brief description of why you should work for nyc and a learn more button--> 
   
   <div class= "box-4">
       <div class= "box-5">
@@ -64,23 +77,18 @@ table td{
         </h1>
         <h2>
         Career opportunity. Job security. Great benefits. 
-        
-
-                   
         </h2>
 
         <h3> +300,000 Employees</h3>
         <h4> 80 Agencies </h4>
 
         <h5><input class = "button2" type ="submit" value= "LEARN MORE" name="" style="font-size : 10px; width: 100px; height: 50px;" > </h5> 
-
-        
-        </div>
+       </div>
       
       </div>
 
 
-
+<!--block containing another block with an option to submit your first and last name to obtain your civil service exam score which retrieves data from nyc open data concerning civil exam scores-->
 
 <div class= "box-7">
       <div class= "box-8">
@@ -95,6 +103,8 @@ table td{
 
     </h2>
     <h3>
+
+      <!--area that displays a message if the name entered is not found -->
                <div id= "noName">
                <h1> </h1>
                </div>
@@ -110,18 +120,19 @@ table td{
       <button id= "getText"> Search</button>
    </form>
 
+   <!--area where exam score is displayed-->
+
    <div id= "output"></div>
    
-   
-
-
-
-
-
-</h3>
+   </h3>
             </div>
       
       </div>
+
+
+
+     <!--block containing various job categories of which you can click and get the available job listings of that category from nyc open data(only health category works)-->
+
 
       <div class= "divide"> <h1> Searching for a job? </h1>
         <h2> Click a category to view the available job listings.</div>
@@ -159,39 +170,49 @@ table td{
 
      <div class= "clr"></div>
 
-
+ <!--area that displays a table with the available job listings-->
   
-      
-     
-      <div id= "output2">
+       <div id= "output2">
       
    </div>
  
  
 
       
-
+<!--first script tag that connects to the civil service exam scores API-->
 
 <script>
+
+//const variables that connect to firstname,lastname and noName id//
 
       const firstInput = document.querySelector('#firstname')
       const lastInput = document.querySelector('#lastname')
       const msg = document.querySelector('#noName')
 
+//event listener that connects to getText id which is the id for the search button//
+//by clicking the search button it calls the function getPosts//
       document.getElementById('getText').addEventListener('click', getPosts);
 
-
+//funciton getPosts to fetch data from API and manipulate it//
+//preventdefault cancels the action of the button from actually submitting anything//
       function getPosts(e){
          e.preventDefault();
+//fetch the data from nyc open data//
          fetch('https://data.cityofnewyork.us/resource/vx8i-nprf.json')
+//then allows us to work with the promise that fetch returns and get the json format text//
+//another then to get the actual data instead of just the promise//
          .then((res) => res.json())
          .then((data) => {
+//let variable to store the data we want//
             let output = "";
+//for loop to go through the data//
             data.forEach(function(post){
+//an if statement that turns the user input to uppercase since the data in the API is in uppercase and compares it, this is so the user doesnt have to enter their name in uppercase// 
             
                 if(firstInput.value.toUpperCase() === post.first_name && lastInput.value.toUpperCase() === post.last_name ){
             output+=`
                <div> 
+
                <h3> ${post.adj_fa} </h3>
                
                </div>
@@ -199,7 +220,9 @@ table td{
                
              });
             if (output != "")
+//prints output variable into the output id//
             document.getElementById('output').innerHTML = output;
+//prints message if name not found and has a timer//
             else{
              
               msg.innerHTML = '<h1>NAME NOT FOUND</h1>';
@@ -214,7 +237,12 @@ table td{
 
 
 
+<!-- second script tag that connects to the job listings API-->
+
 <script>
+
+
+  //connects to the div named block1 which contains the health category//
 
        document.getElementById('block1').addEventListener('click', getPosts);
 
@@ -226,6 +254,9 @@ table td{
          .then((data) => {
             let output2 = "";
             data.forEach(function(post){
+
+//if statement to get all the job listings of health category//
+//table to organize it//
             
                 if('Health' === post.job_category){
             output2+=`
@@ -263,10 +294,7 @@ table td{
             });
             if (output2 != "")
             document.getElementById('output2').innerHTML = output2;
-            else{msg.innerHTML = 'NAME NOT FOUND';
-               setTimeout(() => msg.innerHTML= "", 4000);
-
-               }
+           
             
          })
       }
