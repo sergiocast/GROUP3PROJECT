@@ -333,7 +333,7 @@ body{
 
 
 
-.block2{
+#block2{
     float:left;
     width:20%;
     box-sizing :border-box;
@@ -352,7 +352,7 @@ body{
 
 
 
-.block3{
+#block3{
     float:left;
     width:20%;
     box-sizing :border-box;
@@ -368,14 +368,14 @@ body{
    
 }
 
-.block3 h1{
+#block3 h1{
     left: 30px;
     position: relative;
     top:70px;
 }
 
 
-.block4{
+#block4{
     float:left;
     width:20%;
     box-sizing :border-box;
@@ -390,7 +390,7 @@ body{
    
 }
 
-.block5{
+#block5{
     float:left;
     width:20%;
     margin-top:35px;
@@ -405,7 +405,7 @@ body{
     background-size: cover;
 }
 
-.block6{
+#block6{
     float:left;
     width:20%;
     box-sizing :border-box;
@@ -424,7 +424,7 @@ body{
 
 
 
-.block7{
+#block7{
     float:left;
     width:20%;
     box-sizing :border-box;
@@ -441,7 +441,7 @@ body{
 }
 
 
-.block8{
+#block8{
     float:left;
     width:20%;
     box-sizing :border-box;
